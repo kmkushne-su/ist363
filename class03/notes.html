@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        button {
+            border-radius: 50%;
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 25% auto;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background-color: rgb(188, 13, 164);
+            transform:rotate(360deg);
+        }
+        
+        #otto:hover {
+            animation: slideAndFlip 1s ease-in-out;
+        }
+
+        @keyframes slideAndFlip {
+            0% {
+                transform: translate(0px) rotateY(0deg);
+            }
+
+            50% {
+                transform: translate(250px) rotateY(45deg);
+            }
+
+            75% {
+                transform: translateY(-100px) scale(2)
+            }
+
+            100% {
+                transform: translate(500px) rotateY(180deg);
+            }
+            }
+
+    </style>
+</head>
+<body>
+    <button>Go Orange!</button>
+    <img src="../images/image1.jpg" id="otto" alt="otto riding scooter">
+</body>
+</html>
