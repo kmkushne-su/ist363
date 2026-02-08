@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+</head>
+<body class="font-sans">
+    <header>
+        <nav class="bg-indigo-950 flex items-center justify-between p-2">
+            <h1 class="text-3xl"><span class="text-yellow-400">Orange</span> <span class="text-white">News</span></h1>
+        <div class="flex">
+            <a class="text-white m-4">Home</a>
+            <a class="text-white m-4">Latest</a>
+            <a class="text-white m-4">Scores</a>
+            <a class="text-white m-4">Videos</a>
+            <a class="text-white m-4">More</a>
+        </div>
+        </nav>
+    </header>
+    <main>
+    <div class="flex flex-col items-center justify-center min-h-screen rounded-md m-8 -mt-40 -my-0.5 max-h-2 -mb-44">
+    <div class="w-full h-[30rem] overflow-hidden rounded-lg rounded-b-none">
+        <img class="w-full h-full object-cover object-top" src="images/campus.jpg" alt="Syracuse University Campus">
+    </div>
+    <div class="bg-gray-800 rounded-lg rounded-t-none w-full max-w-500. px-4 py-2">
+        <h2 class="text-white text-3xl font-bold m-4">Will the Snow Ever Thaw?</h2>
+        <p class="text-white m-4">Get the latest scoop on the weather and everything that affects the jet stream.</p>
+    </div>
+    </div>
+    <h2 class="m-6 ml-8 text-2xl font-semibold">More Featured Stories</h2>
+    <br>
+    <div class="flex gap-4 mx-8 -my-6">
+        <div class="shadow-md justify-content rounded-lg shrink p-4">
+            <img class="rounded-lg" src="images/graduates.jpg" alt="Syracuse Unviersity Graduates">
+            <h2 class="text-xl font-bold my-3">Graduation 2025</h2>
+            <p class="-mt-0.5 mb-1">Invite your friends and family to join us in May.</p>
+        </div>
+        <div class="shadow-md justify-content rounded-lg shrink p-4">
+            <img class="rounded-lg" src="images/runners.jpg" alt="Syracuse Unviersity Colleagues Running a 5K">
+            <h2 class="text-xl font-bold my-3">Workplace Run</h2>
+            <p class="-mt-0.5 mb-1">Run a 5K with your colleagues.</p>
+        </div>
+        <div class="shadow-md justify-content rounded-lg shrink p-4">
+            <img class="rounded-lg" src="images/artshow.jpg" alt="Syracuse Unviersity Art Show">
+            <h2 class="text-xl font-bold my-3">Art Show</h2>
+            <p class="-mt-0.5 mb-1">The best art of the year on display at Schaffer.</p>
+        </div>
+    </div>
+    <br>
+    <div class="flex -space-x-32">
+    <div class="topheadlines">
+    <h2 class="m-6 ml-8 text-2xl font-semibold">Top Headlines</h2>
+    <br>
+    <div class="shadow-md justify-content rounded-lg shrink p-4 mx-8 -mt-8 mb-5 pr-44">
+        <h2 class="text-xl font-bold my-3">Player X Breaks Record</h2>
+        <p class="-mt-0.5 mb-1">The record-breaking performance from Player X stunned fans everywhere...</p>
+    </div>
+    <div class="shadow-md justify-content rounded-lg shrink p-4 mx-8 mb-5 pr-44">
+        <h2 class="text-xl font-bold my-3">Team Y Wins Championship</h2>
+        <p class="-mt-0.5 mb-1">In an epic showdown, Team Y came out on top with a historic victory...</p>
+    </div>
+    <div class="shadow-md justify-content rounded-lg shrink p-4 mx-8 mb-11 pr-44">
+        <h2 class="text-xl font-bold my-3">Athlete Z Announces Retirement</h2>
+        <p class="-mt-0.5 mb-1">Athlete Z's retirement shocked the sports world.</p>
+    </div>
+    </div>
+    <div class="mr-8 gap-44">
+        <p class="mt-6 mb-2 text-2xl font-semibold mx-44 mb-4">Game Scores</p>
+        <div class="shadow-md rounded-lg w-full p-10 mx-44"> 
+        <div class="flex justify-between items-center mb-4">
+            <span class="font-bold">Game</span>
+            <span class="font-bold">Score</span>
+        </div>
+            <hr class="my-4 border-t-2 rounded-full"/>
+        <div class="flex justify-between items-center gap-x-44">
+            <span>Women's Hockey vs. Miami</span><span>3 - 1</span>
+        </div>
+        <div class="flex justify-between items-center gap-x-24">
+            <span class="mt-3">Men's Lacrosse vs. St. Bonaventure</span><span class="mt-3">7 - 18</span>
+        </div>
+        <div class="flex justify-between items-center gap-x-44">
+            <span class="mt-3">Men's Basketball vs. Duke</span>
+            <span class="mt-3">98 - 75</span>
+        </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+    <div class="bg-gray-800 m-4 p-7 rounded-md ml-8 mr-8 mb-8 -mt-2">
+        <h2 class="text-white m-1 text-2xl font-semibold">Subscribe to Our Newsletter</h2>
+        <p class="text-white text-sm my-3 ml-1">Stay updated with the latest news, scores, and exclusive content delivered straight to your inbox!</p>
+        <div class="flex">
+        <input class="rounded-md text-xs pr-96 p-1 rounded-tr-none rounded-br-none" type="email" id="email-input" name="email" placeholder="  Enter your email" required>
+        <button class="bg-yellow-400 text-xs -mt-0 rounded-md text-center px-24 py-1 rounded-tl-none rounded-bl-none" type="submit">Subscribe</button>
+        </div>
+    </div>
+    </footer>
+    </main>
+</body>
+</html>
