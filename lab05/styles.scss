@@ -1,0 +1,27 @@
+$warning: #000080;
+$basicwhite: #FFFFFF !important;
+$basicblue: #e4eeff;
+
+
+@import '../bootstrap-modules/node_modules/bootstrap/scss/bootstrap.scss';
+
+nav, footer {
+    background-color: $warning;
+}
+
+h1 {
+    color: $warning !important;
+}
+
+p, a {
+    color: $basicwhite;
+}
+
+.carousel-img-half-height {
+  max-height: 50vh;
+  object-fit: cover;
+}
+
+.myblue {
+    background-color: $basicblue;
+}
