@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster vs. Girl</title>
+</head>
+<style>
+/* Add this keyframe animation to your style block */
+@keyframes fireballTravel {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-500px); opacity: 0; }
+}
+
+/* Ensure the animate class applies the animation */
+.animate {
+    animation: fireballTravel 0.5s ease-out;
+}
+</style>
+<body>
+
+<div id="fireball" class="fireball-style">🔥</div>
+<p>Monster Shield: <span id="monster-shield">100</span></p>
+<p>Girl Shield: <span id="girl-shield">100</span></p>
+<button id="fireballBtn">Throw Fireball</button>
+<div id="result-area"></div>
+
+</body>
+<script>
+    // --- 1. Setup Variables (Global Scope) ---
+let monsterShield = 100;
+let girlShield = 100;
+
+// --- 2. Event Listener ---
+// Assumes you have a button with id="fireballBtn"
+document.getElementById("fireballBtn").addEventListener("click", playGame);
+
+function playGame() {
+    // --- 3. Animate Fireballs ---
+    // Assuming animateFireball function exists as described
+    animateFireball(); 
+
+    // --- 4. Calculate throwing power ---
+    // Generate random damage between 1-20
+    let monsterDamage = Math.floor(Math.random() * 20) + 1;
+    let girlDamage = Math.floor(Math.random() * 20) + 1;
+
+    // Decrease shield power
+    monsterShield -= girlDamage; // Girl throws at monster
+    girlShield -= monsterDamage; // Monster throws at girl
+
+    // Update DOM with new shield powers
+    // Assumes spans with IDs "monster-shield" and "girl-shield"
+    document.getElementById("monster-shield").innerText = monsterShield;
+    document.getElementById("girl-shield").innerText = girlShield;
+
+    // --- 5. Check for winner/loser ---
+    let message = "";
+    if (monsterShield <= 0 && girlShield <= 0) {
+        message = "Both Lost! It's a draw!";
+    } else if (monsterShield <= 0) {
+        message = "Girl Won!";
+    } else if (girlShield <= 0) {
+        message = "Monster Won!";
+    }
+
+    if (message !== "") {
+        // Display result
+        document.getElementById("result-area").innerText = message;
+        // Remove button
+        document.getElementById("fireballBtn").style.display = "none";
+    }
+}
+
+// --- Provided animateFireball function structure ---
+function animateFireball() {
+    let fireball = document.getElementById("fireball");
+    fireball.classList.remove("animate"); // Reset
+    void fireball.offsetWidth; // Trigger reflow to restart animation
+    fireball.classList.add("animate"); // Start
+}
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Years Calculator</title>
+</head>
+<body>
+
+    <h2>Dog Age to Dog Years Calculator</h2>
+
+    <form>
+        <label for="dogAge">Enter your dog's age (in human years):</label>
+        <input type="number" id="dogAge" min="0" placeholder="" required>
+        <br><br>
+        <button type="button" onclick="calculateDogAge()">Calculate</button>
+    </form>
+
+    <p id="resultArea">Your dog's age in dog years will appear here.</p>
+
+    <script>
+
+    function calculateDogAge() {
+
+    const humanYearsInput = document.querySelector('#dogAge');
+
+    const resultArea = document.querySelector('#resultArea');
+
+    // I think this is correct? I would like to review alternative methods more!
+    const humanYears = (humanYearsInput.value); 
+
+    const dogYears = humanYears * 7;
+    
+    resultArea.innerHTML = `<strong>Your dog is approximately ${dogYears} years old in dog years!</strong>`;
+
+    }
+
+    </script>
+
+
+</body>
+</html>
