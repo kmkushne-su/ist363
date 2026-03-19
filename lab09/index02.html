@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab 09</title>
+</head>
+<script>
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow"
+    };
+
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=43.0481&longitude=-76.1474&current=cloud_cover,precipitation,temperature_2m&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch", requestOptions)
+    // Questions: Why do I need to convert the below to json? Not already converted?
+        .then(response => response.json())
+        .then(data => {
+
+        const temp = data.current.temperature_2m;
+        const precip = data.current.precipitation;
+        const cloud = data.current.cloud_cover;
+
+        document.getElementById("temp").textContent = "Temperature: " + temp + " °F";
+        document.getElementById("precip").textContent = "Precipitation: " + precip + " in";
+        let cloudEmoji;
+
+        if (cloud < 50) {
+          cloudEmoji = "☀️";
+        } 
+        else {
+          cloudEmoji = "☁️";
+        }
+// Does "cloudEmoji" not have to be in quotation marks because it is a declared variable?
+        document.getElementById("cloud").textContent = "Sky: " + cloudEmoji;
+      })
+      .catch(error => console.error(error));
+      
+  </script>
+<body>
+  <h1>Syracuse, New York Weather</h1>
+  <p id="temp"></p>
+  <p id="precip"></p>
+  <p id="cloud"></p>
+</body>
+</html>
