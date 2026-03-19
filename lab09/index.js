@@ -4,6 +4,7 @@
     };
 
     fetch("https://api.open-meteo.com/v1/forecast?latitude=43.0481&longitude=-76.1474&current=cloud_cover,precipitation,temperature_2m&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch", requestOptions)
+// Questions: Why do I need to convert the below to json? Not already converted?: - verified: very dependent on the situation, in this case, use "response.json"
         .then(response => response.json())
         .then(data => {
 
@@ -21,7 +22,12 @@
         else {
           cloudEmoji = "☁️";
         }
+
+// Future Question: Does "cloudEmoji" not have to be in quotation marks because it is a declared variable?
+
         document.getElementById("cloud").textContent = cloudEmoji;
       })
       .catch(error => console.error(error));
+
+// HTML Question: my spacing is a bit off, is that alright? - verfied: all good!
       
