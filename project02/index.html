@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFinder 2026 | Popular Movies</title>
+    <script src="index.js"></script>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #0d253f;
+            --secondary: #01b4e4;
+            --accent: #90cea1;
+            --dark: #030406;
+            --light: #ffffff;
+            --gray: #f4f4f4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--gray); color: #333; line-height: 1.6; }
+
+        /* Header */
+        header { background-color: var(--primary); color: var(--light); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        header h1 { font-size: 1.5rem; color: var(--accent); }
+        header nav a { color: var(--light); text-decoration: none; margin-left: 15px; font-weight: bold; }
+
+        /* Main Content */
+        main { padding: 2rem 5%; }
+        .hero { text-align: center; margin-bottom: 2rem; }
+        
+        /* Grid Layout */
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+        
+        /* Movie Card */
+        .movie-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; display: flex; flex-direction: column; }
+        .movie-card:hover { transform: translateY(-5px); }
+        .movie-card img { width: 100%; height: 350px; object-fit: cover; }
+        .movie-info { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .movie-title { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary); }
+        .movie-meta { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .streaming-info { margin-top: auto; padding-top: 1rem; border-top: 1px solid #eee; font-weight: bold; color: var(--secondary); font-size: 0.9rem; }
+        .no-stream { color: #888; font-weight: normal; }
+
+        /* Footer */
+        footer { background-color: var(--dark); color: var(--light); text-align: center; padding: 2rem; margin-top: 2rem; }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.2rem; }
+            .movie-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+            .movie-card img { height: 220px; }
+            .movie-title { font-size: 0.9rem; }
+            .movie-meta, .streaming-info { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>StreamFinder 🎬</h1>
+        <nav>
+            <a href="#">Popular</a>
+            <a href="#">Trending</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Now Trending & Streaming</h2>
+            <p>Real-time data from TMDB</p>
+        </section>
+
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movie cards will be inserted here via JS -->
+            <p>Loading movies...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Developed by [Your Name] | Powered by TMDB API</p>
+        <p>Real-time Streaming Data (US)</p>
+    </footer>
+</body>
+</html>
