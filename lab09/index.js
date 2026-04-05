@@ -27,6 +27,7 @@
 
         document.getElementById("cloud").textContent = cloudEmoji;
       })
+      
       .catch(error => console.error(error));
 
 // Past Question: my spacing is a bit off, is that alright? - verfied: all good!
