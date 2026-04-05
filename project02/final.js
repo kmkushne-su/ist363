@@ -9,7 +9,7 @@ const QUOTE_URL = 'https://dummyjson.com/quotes/random';
 
 // The async fetch function that gets the movies!
 async function fetchMovies() {
-// I believe this is best executed with a "try and catch" statement (for trial, error, and success), as recommended on the website: https://www.w3schools.com/java/java_try_catch.asp
+// I believe this is best executed with a "try and catch" statement (for trial, error, and success), as recommended on the website: https://www.w3schools.com/java/java_try_catch.asp + https://stackoverflow.com/questions/651619/what-is-the-advantage-of-using-try-catch-versus-if-else
     try {
         const response = await fetch(`${TMDB_URL}/movie/popular?api_key=${TMDB_KEY}&language=en-US&page=1`); // Allowing variables inside of strings with the Dollar Sign: https://www.w3schools.com/js/js_strings.asp 
         const data = await response.json(); // Explaining the Await Function for Both Rows: https://www.w3schools.com/js/js_async_await.asp AND 
@@ -72,3 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchMovies();
     fetchQuotes();
 });
+
+// I would like to review more about using APIs, the "try and catch" functions but I believe I generally understand the process!
